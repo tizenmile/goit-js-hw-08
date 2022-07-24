@@ -30,7 +30,8 @@ getInputFromStrorage();
 form.addEventListener('submit', event => {
   event.preventDefault();
   console.log(localStorage.getItem('feedback-form-state'));
-  localStorage.clear();
+  localStorage.setItem("email", "")
+  localStorage.setItem("message", "")
 
   form.children[0].children[0].value = '';
   form.children[1].children[0].value = '';
