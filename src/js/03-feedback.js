@@ -29,10 +29,17 @@ getInputFromStrorage();
 
 form.addEventListener('submit', event => {
   event.preventDefault();
-  console.log(localStorage.getItem('feedback-form-state'));
-  localStorage.setItem("email", "")
-  localStorage.setItem("message", "")
+  if (
+    form.children[0].children[0].value === '' ||
+    form.children[1].children[0].value === ''
+  ) {
+    alert('Заповніть всі поля');
+  } else {
+    console.log(localStorage.getItem('feedback-form-state'));
+    localStorage.setItem('email', '');
+    localStorage.setItem('message', '');
 
-  form.children[0].children[0].value = '';
-  form.children[1].children[0].value = '';
+    form.children[0].children[0].value = '';
+    form.children[1].children[0].value = '';
+  }
 });
