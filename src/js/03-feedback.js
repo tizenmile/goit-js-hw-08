@@ -35,9 +35,11 @@ form.addEventListener('submit', event => {
   ) {
     alert('Заповніть всі поля');
   } else {
-    console.log(localStorage.getItem('feedback-form-state'));
-    localStorage.setItem('email', '');
-    localStorage.setItem('message', '');
+    const formStateParse = JSON.parse(
+      localStorage.getItem('feedback-form-state')
+    );
+    console.log(formStateParse);
+    localStorage.clear();
 
     form.children[0].children[0].value = '';
     form.children[1].children[0].value = '';
